@@ -27,7 +27,7 @@ function App(): JSX.Element {
             title: string;
             paragraphs: string[];
           }) => (
-            <Section id={id}>
+            <Section id={id} className="Section">
               <h2>{title}</h2>
               {paragraphs.map((paragraph) => (
                 <Paragraph key={paragraph} translation={paragraph} />

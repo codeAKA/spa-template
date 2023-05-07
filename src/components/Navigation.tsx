@@ -15,7 +15,7 @@ const NavigationLink: React.FC<NavigationLinkProps> = (props) => {
   };
 
   return (
-    <a className={className} onClick={scrollToAnchor} href={`#${anchor}`}>
+    <a className={className} onClick={scrollToAnchor}>
       {translation}
     </a>
   );
