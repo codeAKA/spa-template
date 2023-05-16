@@ -1,0 +1,17 @@
+ul.nav-list {
+  width: 80vw;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 2vw;
+}
+
+.nav-list-item {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.nav-list-item :hover {
+  cursor: pointer;
+}

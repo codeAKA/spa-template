@@ -1,9 +1,3 @@
 .App {
   text-align: center;
 }
-
-.Section {
-  width: 100%;
-  height: 100vh;
-  overflow: auto;
-}

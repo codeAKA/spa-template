@@ -6,7 +6,7 @@ interface ParagraphProps {
   className?: string;
 }
 
-export const Paragraph: React.FC<ParagraphProps> = (props) => {
+const Paragraph: React.FC<ParagraphProps> = (props) => {
   const { id, translation, className } = props;
   return (
     <p className={className} id={id}>
@@ -14,3 +14,5 @@ export const Paragraph: React.FC<ParagraphProps> = (props) => {
     </p>
   );
 };
+
+export default Paragraph;

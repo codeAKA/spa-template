@@ -1,4 +1,5 @@
 import React from "react";
+import "./Navigation.css";
 
 interface NavigationLinkProps {
   translation: string;
@@ -31,16 +32,22 @@ export const Navigation: React.FC<NavigationProps> = (props) => {
   const { id, links, className } = props;
 
   return (
-    <nav className={className} id={id}>
-      {links?.length &&
-        links.map(({ translation, anchor }) => (
-          <NavigationLink
-            className="nav-link"
-            translation={translation}
-            anchor={anchor}
-            key={anchor}
-          />
-        ))}
+    <nav
+      className={!className ? "Navigation" : `Navigation ${className}`}
+      id={id}
+    >
+      <ul className="nav-list">
+        {links?.length &&
+          links.map(({ translation, anchor }) => (
+            <li className="nav-list-item" key={anchor}>
+              <NavigationLink
+                className="nav-link"
+                translation={translation}
+                anchor={anchor}
+              />
+            </li>
+          ))}
+      </ul>
     </nav>
   );
 };
