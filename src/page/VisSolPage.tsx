@@ -62,9 +62,11 @@ const VisSolPage: React.FC = () => {
           </Section>
         )
       )} */}
-      <ScrollButton>
-        <FontAwesomeIcon icon={faCircleChevronUp} />
-        Powrót
+      <ScrollButton className="ScrollButton">
+        <div className="ScrollButton__content">
+          <FontAwesomeIcon icon={faCircleChevronUp} />
+          <span>Powrót</span>
+        </div>
       </ScrollButton>
       <Footer id="footer" translations={footerColumns} />
     </Page>

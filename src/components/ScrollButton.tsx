@@ -1,5 +1,6 @@
 import React, { ReactNode, useState, useEffect } from "react";
 import "./ScrollButton.css";
+import Button from "./Button";
 
 interface ScrollButtonProps {
   children: ReactNode;
@@ -31,13 +32,13 @@ const ScrollButton: React.FC<ScrollButtonProps> = (props) => {
   }, []);
 
   return (
-    <button
+    <Button
       onClick={scrollToTop}
       style={{ display: showButton ? "block" : "none" }}
       className={`scroll-button ${className}`}
     >
       {children}
-    </button>
+    </Button>
   );
 };
 

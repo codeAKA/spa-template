@@ -4,6 +4,54 @@
   overflow: auto;
 }
 
+.Button {
+  background: rgb(0, 109, 166);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 109, 166, 1) 0%,
+    rgba(157, 136, 51, 1) 100%
+  );
+  border: 1px solid darkgray;
+  box-sizing: border-box;
+}
+
+.ScrollButton {
+  font-size: 1.2em;
+  border-radius: 25px;
+  padding: 10px 20px;
+}
+
+.ScrollButton__content {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.nav-toggle {
+  font-size: 1.2em;
+  color: white;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+}
+
+.nav-list {
+  background: rgb(0, 109, 166);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 109, 166, 1) 0%,
+    rgba(157, 136, 51, 1) 100%
+  );
+  color: white;
+}
+
+.nav-list.expanded {
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 .contact__paragraph__container {
   display: flex;
   flex-direction: row;
