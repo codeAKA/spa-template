@@ -7,8 +7,8 @@ enum HEADER_SIZES {
 }
 
 interface HeaderProps {
-  id: string;
-  className: string;
+  id?: string;
+  className?: string;
   translation: string;
   size: keyof typeof HEADER_SIZES;
 }

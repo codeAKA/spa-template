@@ -8,14 +8,18 @@ interface NavigationLinkProps {
   translation: string;
   anchor: string;
   className?: string;
+  setIsNavExpanded: (value: boolean) => void;
+
+  onClick?: () => void;
 }
 
 const NavigationLink: React.FC<NavigationLinkProps> = (props) => {
-  const { translation, className, anchor } = props;
+  const { translation, className, anchor, setIsNavExpanded } = props;
 
   const scrollToAnchor = () => {
     const element = document.getElementById(anchor);
     element?.scrollIntoView({ behavior: "smooth" });
+    setIsNavExpanded(false);
   };
 
   return (
@@ -41,7 +45,7 @@ export const Navigation: React.FC<NavigationProps> = (props) => {
       id={id}
     >
       <Button
-        className="nav-toggle"
+        className="Navigation-toggle"
         onClick={() => setIsNavExpanded(!isNavExpanded)}
       >
         <FontAwesomeIcon icon={isNavExpanded ? faXmark : faBars} />
@@ -54,6 +58,7 @@ export const Navigation: React.FC<NavigationProps> = (props) => {
                 className="nav-link"
                 translation={translation}
                 anchor={anchor}
+                setIsNavExpanded={setIsNavExpanded}
               />
             </li>
           ))}

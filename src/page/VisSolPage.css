@@ -1,18 +1,71 @@
-.Section {
-  width: 100%;
-  height: 100vh;
-  overflow: auto;
-}
-
-.Button {
-  background: rgb(0, 109, 166);
-  background: linear-gradient(
+:root {
+  --main-background: rgba(0, 109, 166, 1);
+  --main-gradient: linear-gradient(
     90deg,
     rgba(0, 109, 166, 1) 0%,
     rgba(157, 136, 51, 1) 100%
   );
-  border: 1px solid darkgray;
+}
+
+.PageHeader {
+  width: 100%;
+  height: 50vh;
+  background: url(../../public/images/metal-background.jpg) no-repeat center
+    center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border-top: 1px solid rgb(121, 121, 121);
+  border-bottom: 1px solid rgb(121, 121, 121);
+}
+
+.PageHeader__title {
+  margin: auto;
+  font-size: 10em;
+  margin-top: 5%;
+  background: var(--main-background);
+  background: var(--main-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.Section {
+  width: 100%;
   box-sizing: border-box;
+  padding: 10vh 20vw 15vh 20vw;
+  overflow: auto;
+  font-size: 1.2em;
+}
+
+.Section--contact {
+  background: var(--main-background);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 109, 166, 0.7) 0%,
+    rgba(157, 136, 51, 0.7) 100%
+  );
+}
+
+.Button {
+  background: var(--main-background);
+  background: var(--main-gradient);
+  border: 1px solid rgb(121, 121, 121);
+  box-sizing: border-box;
+}
+
+.Button.PageHeader__button {
+  background: none;
+  border: none;
+}
+
+.Button.PageHeader__button:hover {
+  cursor: pointer;
+}
+
+.PageHeader__button__icon {
+  color: rgb(0, 109, 166, 0.7);
+  font-size: 5em;
 }
 
 .ScrollButton {
@@ -27,7 +80,7 @@
   gap: 10px;
 }
 
-.nav-toggle {
+.Navigation-toggle {
   font-size: 1.2em;
   color: white;
   border-radius: 5px;
@@ -36,12 +89,8 @@
 }
 
 .nav-list {
-  background: rgb(0, 109, 166);
-  background: linear-gradient(
-    90deg,
-    rgba(0, 109, 166, 1) 0%,
-    rgba(157, 136, 51, 1) 100%
-  );
+  background: var(--main-background);
+  background: var(--main-gradient);
   color: white;
 }
 
@@ -57,4 +106,28 @@
   flex-direction: row;
   align-items: center;
   gap: 10px;
+  text-align: left;
+}
+
+.Footer {
+  background: rgb(21, 55, 73);
+  height: 50px;
+  padding-top: 20px;
+  border-top: 1px solid rgb(44, 44, 44);
+  color: rgb(135, 135, 135);
+}
+
+@media screen and (max-width: 768px) {
+  .PageHeader__title {
+    font-size: 3em;
+    margin-top: 30%;
+  }
+
+  .PageHeader__button__icon {
+    font-size: 3em;
+  }
+
+  .Section {
+    padding: 10vh 10vw;
+  }
 }

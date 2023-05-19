@@ -12,9 +12,11 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  margin-bottom: 0;
+  z-index: 1000;
 }
 
-.nav-toggle {
+.Navigation-toggle {
   display: none;
 }
 
@@ -35,7 +37,7 @@
     width: 100%;
   }
 
-  .nav-toggle {
+  .Navigation-toggle {
     display: block;
     margin: 30px 30px;
   }

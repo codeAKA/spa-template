@@ -5,6 +5,7 @@ interface ButtonProps {
   className?: string;
   style?: React.CSSProperties | undefined;
   onClick?: () => void;
+  ref?: React.RefObject<HTMLButtonElement>;
 }
 
 const Button: React.FC<ButtonProps> = ({

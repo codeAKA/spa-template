@@ -9,8 +9,6 @@ interface FooterItemProps {
 const FooterItem: React.FC<FooterItemProps> = (props) => {
   const { title, links, id } = props;
 
-  console.log(props);
-
   const renderUrlOrText = (linkItem: { isLink: boolean; text: string }) => {
     if (linkItem.isLink) {
       return (
@@ -44,8 +42,6 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = (props) => {
   const { id, className, translations } = props;
-
-  console.log(props);
 
   return (
     <footer className={className} id={id}>
