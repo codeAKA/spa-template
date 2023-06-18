@@ -1,51 +1,40 @@
 {
-  "lang": {
-    "pl": {
-      "page": {
-        "name": "Visual Solutions",
-        "navigationLinks": [
-          {
-            "translation": "O firmie",
-            "anchor": "about"
-          },
-          {
-            "translation": "Kontakt",
-            "anchor": "contact"
-          }
-        ],
-        "sections": [
-          {
-            "id": "about",
-            "title": "O Visual Solutions",
-            "paragraphs": [
-              "Spółka Visual Solutions S.A. specjalizuje się w produkcji wiat i lekkich konstrukcji stalowych.",
-              "Produkujemy też elementy wizualizacji zewnętrznej dla stacji benzynowych i obiektów handlowych oraz kompletujemy dla nich wyposażenie wewnętrzne."
-            ]
-          },
-          {
-            "id": "contact",
-            "title": "Kontakt",
-            "paragraphs": [
-              "REGON : 473053553",
-              "NIP : 7251838537",
-              "e-mail: biuro@visualsolutions.pl",
-              "adres: 50-304 Wrocław, ul. A. Słomimskiego 1",
-              "tel: (+48) 123 456 789"
-            ]
-          }
-        ],
-        "footerColumns": [
-          {
-            "title": "",
-            "links": [
-              {
-                "isLink": false,
-                "text": "Visual Solutions S.A. © 2023"
-              }
-            ]
-          }
-        ]
-      }
+  "pl": {
+    "page": {
+      "name": "Visual Solutions",
+      "navigationLinks": [
+        {
+          "translation": "O firmie",
+          "anchor": "about"
+        },
+        {
+          "translation": "Kontakt",
+          "anchor": "contact"
+        }
+      ],
+      "sections": [
+        {
+          "id": "about",
+          "title": "O Visual Solutions",
+          "paragraphs": []
+        },
+        {
+          "id": "contact",
+          "title": "Kontakt",
+          "paragraphs": []
+        }
+      ],
+      "footerColumns": [
+        {
+          "title": "",
+          "links": [
+            {
+              "isLink": false,
+              "text": "Visual Solutions S.A. © 2023"
+            }
+          ]
+        }
+      ]
     }
   }
 }

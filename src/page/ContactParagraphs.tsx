@@ -41,7 +41,7 @@ const ContactParagraphs: React.FC<{ paragraph: string; index: number }> = (
     case 3:
       return <ContactParagraph paragraph={paragraph} icon={faEnvelope} />;
     default:
-      return <ContactParagraph paragraph={paragraph} icon={faMobileScreen} />;
+      return <></>;
   }
 };
 export default ContactParagraphs;

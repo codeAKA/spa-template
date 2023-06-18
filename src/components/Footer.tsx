@@ -1,9 +1,10 @@
 import React from "react";
+import { FooterColumns, FooterLink } from "../types/translations.types";
 
 interface FooterItemProps {
   id?: string;
   title?: string;
-  links: Array<{ isLink: boolean; text: string }>;
+  links: FooterLink[];
 }
 
 const FooterItem: React.FC<FooterItemProps> = (props) => {
@@ -37,7 +38,7 @@ const FooterItem: React.FC<FooterItemProps> = (props) => {
 interface FooterProps {
   id?: string;
   className?: string;
-  translations: FooterItemProps[];
+  translations: FooterColumns[];
 }
 
 const Footer: React.FC<FooterProps> = (props) => {
