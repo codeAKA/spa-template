@@ -1,12 +1,12 @@
-import React, { MutableRefObject, ReactNode, useRef } from "react";
+import React, { ReactNode } from "react";
 
-interface SectionProps {
+export interface SectionProps {
   id?: string;
   className?: string;
   children: ReactNode;
 }
 
-export const Section: React.FC<SectionProps> = (props) => {
+const Section: React.FC<SectionProps> = (props) => {
   const { id, children, className } = props;
 
   return (
@@ -15,3 +15,5 @@ export const Section: React.FC<SectionProps> = (props) => {
     </section>
   );
 };
+
+export default Section;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Navigation } from "../components/Navigation";
 import { PageHeader } from "../components/PageHeader";
-import { Section } from "../components/Section";
+import Section from "../components/Section";
 import Footer from "../components/Footer";
 import translations from "../page/translations.json";
 import ScrollButton from "../components/ScrollButton";
@@ -24,6 +24,7 @@ import {
   SectionContent,
 } from "../types/translations.types";
 import { PageError } from "../types/response.types";
+import { Route, Routes } from "react-router-dom";
 
 const VisSolPage: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
@@ -73,7 +74,7 @@ const VisSolPage: React.FC = () => {
   }, [sections]);
 
   return (
-    <Page loading={loading} error={error}>
+    <Page loading={loading} error={error} className="Page">
       {navigationLinks && navigationLinks.length > 0 && (
         <Navigation links={navigationLinks} />
       )}
@@ -98,22 +99,72 @@ const VisSolPage: React.FC = () => {
       </PageHeader>
       {sections && sections.length > 0 && (
         <>
-          <Section id={sections[0].id} className="Section Section--about">
-            <h2>{sections[0].title}</h2>
-            {sections[0].paragraphs.map((paragraph) => (
-              <Paragraph key={paragraph} translation={paragraph} />
-            ))}
-          </Section>
-          <Section id={sections[1].id} className="Section Section--contact">
-            <h2>{sections[1].title}</h2>
-            {sections[1].paragraphs.map((paragraph, index) => (
-              <ContactParagraphs
-                key={paragraph}
-                paragraph={paragraph}
-                index={index}
+          <Routes>
+            {sections.map((section) => (
+              <Route
+                key={section.id}
+                path={`/${section.id}`}
+                element={
+                  section.id === "contact" ? (
+                    <Section id={section.id} className="Section">
+                      <Header
+                        size="LARGE"
+                        className="Section__title"
+                        translation={section.title}
+                      />
+                      {section.paragraphs.map((paragraph, index) => (
+                        <ContactParagraphs
+                          index={index}
+                          paragraph={paragraph}
+                        />
+                      ))}
+                    </Section>
+                  ) : (
+                    <Section id={section.id} className="Section">
+                      <Header
+                        size="LARGE"
+                        className="Section__title"
+                        translation={section.title}
+                      />
+                      {section.paragraphs.map((paragraph) => (
+                        <Paragraph key={paragraph} translation={paragraph} />
+                      ))}
+                    </Section>
+                  )
+                }
               />
             ))}
-          </Section>
+            <Route
+              path={`/`}
+              element={
+                <Section id={sections[0].id} className="Section">
+                  <Header
+                    size="LARGE"
+                    className="Section__title"
+                    translation={sections[0].title}
+                  />
+                  {sections[0].paragraphs.map((paragraph) => (
+                    <Paragraph key={paragraph} translation={paragraph} />
+                  ))}
+                </Section>
+              }
+            />
+            <Route
+              path={`*`}
+              element={
+                <Section id={sections[0].id} className="Section">
+                  <Header
+                    size="LARGE"
+                    className="Section__title"
+                    translation={sections[0].title}
+                  />
+                  {sections[0].paragraphs.map((paragraph) => (
+                    <Paragraph key={paragraph} translation={paragraph} />
+                  ))}
+                </Section>
+              }
+            />
+          </Routes>
         </>
       )}
 

@@ -6,7 +6,7 @@ const pageContentMapper = (
   apiResponse: PageApiResponse[],
   language = "pl"
 ): PageContent => {
-  const pageContentMapper = (el: string) =>
+  const renderedContentMapper = (el: string) =>
     el
       .split("</p>")
       .map((paragraph) => paragraph.replace(/<\/?[^>]+(>|$)/g, ""));
@@ -24,7 +24,7 @@ const pageContentMapper = (
     sections: translationsObject[language].page.sections.map((el, index) => ({
       id: response[index].slug,
       title: response[index].title.rendered,
-      paragraphs: pageContentMapper(response[index].content.rendered),
+      paragraphs: renderedContentMapper(response[index].content.rendered),
     })),
   };
 

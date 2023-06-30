@@ -3,6 +3,7 @@ import "./Navigation.css";
 import Button from "./Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faBars } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 interface NavigationLinkProps {
   translation: string;
@@ -16,16 +17,14 @@ interface NavigationLinkProps {
 const NavigationLink: React.FC<NavigationLinkProps> = (props) => {
   const { translation, className, anchor, setIsNavExpanded } = props;
 
-  const scrollToAnchor = () => {
-    const element = document.getElementById(anchor);
-    element?.scrollIntoView({ behavior: "smooth" });
-    setIsNavExpanded(false);
-  };
-
   return (
-    <a className={className} onClick={scrollToAnchor}>
+    <Link
+      className={className}
+      to={anchor}
+      onClick={() => setIsNavExpanded(false)}
+    >
       {translation}
-    </a>
+    </Link>
   );
 };
 
