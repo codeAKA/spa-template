@@ -113,6 +113,15 @@
   color: white;
 }
 
+.nav-list-item a:hover {
+  color: rgb(123, 160, 180);
+  transition: 500ms;
+}
+
+.nav-list-item a.active {
+  color: rgb(123, 160, 180);
+}
+
 .contact__paragraph__container {
   display: flex;
   flex-direction: row;

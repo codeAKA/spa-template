@@ -1,6 +1,6 @@
 import React, { ReactNode, useEffect } from "react";
-import Spinner from "./Spinner";
 import { PageError } from "../types/response.types";
+import BouncingLoader from "./BouncingLoader";
 
 interface PageProps {
   loading: boolean;
@@ -19,7 +19,11 @@ const Page: React.FC<PageProps> = ({ loading, error, children, className }) => {
     return <h1>{`Error code: ${error.data.status}. ${error.message}`}</h1>;
   }
 
-  return isLoading ? <Spinner /> : <div className={className}>{children}</div>;
+  return isLoading ? (
+    <BouncingLoader />
+  ) : (
+    <div className={className}>{children}</div>
+  );
 };
 
 export default Page;
