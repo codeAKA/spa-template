@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import VisSolPage from "./page/VisSolPage";
 
-function App(): JSX.Element {
+function App() {
   return (
     <div className="App">
       <VisSolPage />
